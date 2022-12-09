@@ -12,20 +12,6 @@ public class Main {
         } else {
             System.out.println(year + " год — невисокосный год");
         }
-    }
-    public static int printYear(int year) {
-        if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
-}
-
-
-
-
-    public static void main(String[] args) {
         System.out.println("Задача 2"); // Напишите метод, куда подаются два параметра: тип операционной системы (0 — iOS, 1 — Android )
         System.out.println("Ввведите вашу ОС 1/0");
         Scanner a2 = new Scanner(System.in);
@@ -44,24 +30,7 @@ public class Main {
         } else if (currentYear == 4) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         }
-    }
-    public static int yearChoose(int yearSystem, int system) {
-        if ((yearSystem >= 2015) && (system == 1)) {
-            return 1;
-        } else if  ((yearSystem >= 2015) && (system == 0)) {
-            return 2;
-        } else if  ((yearSystem < 2015) && (system == 1)) {
-            return 3;
-        }  else if ((yearSystem < 2015) && (system == 0)) {
-            return 4;
-        }  else {
-            return 5;
-        }
-    }
-}
 
-
-    public static void main(String[] args) {
         System.out.println("Задача 3"); // Доставка карт
         int deliveryDistance = 95;
         int Distance = cardDelivery(deliveryDistance);
@@ -76,15 +45,37 @@ public class Main {
             System.out.println("Доставки нет");
         }
     }
-    public static int cardDelivery(int deliveryDistance) {
-        if (deliveryDistance < 20) {
+    public static int printYear(int year){
+            if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+    public static int yearChoose ( int yearSystem, int system) {
+        if ((yearSystem >= 2015) && (system == 1)) {
             return 1;
-        } else if (20 <= deliveryDistance && deliveryDistance <= 60) {
+        } else if ((yearSystem >= 2015) && (system == 0)) {
             return 2;
-        } else if (60 < deliveryDistance && deliveryDistance <= 100) {
+        } else if ((yearSystem < 2015) && (system == 1)) {
             return 3;
-        } else   {
+        } else if ((yearSystem < 2015) && (system == 0)) {
             return 4;
+        } else {
+            return 5;
         }
     }
-}
+
+    public static int cardDelivery ( int deliveryDistance){
+                if (deliveryDistance < 20) {
+                    return 1;
+                } else if (20 <= deliveryDistance && deliveryDistance <= 60) {
+                    return 2;
+                } else if (60 < deliveryDistance && deliveryDistance <= 100) {
+                    return 3;
+                } else {
+                    return 4;
+                }
+            }
+        }
